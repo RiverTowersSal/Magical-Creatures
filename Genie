@@ -1,0 +1,55 @@
+/**
+ * 
+ * @author Salvador Del Rio Torres
+ *
+ */
+public class Genie extends MagicalCreature{
+	private boolean Wand;
+	public Genie(String name, String type, String color, int age) {
+		super(name,type,color,age);
+		this.Wand = false;
+	}
+	
+	public Genie() {
+		super("","","", 0);
+	}
+	
+	public String toString() {
+		//prints out MagicalCreatures toString information + this
+		if(this.Wand == true) {
+			return super.toString()+"I eat leaves, I have a wand";
+		}
+		else {
+			return super.toString() + "I eat leaves, I have no wand";
+
+		}
+	}
+	/**
+     * @return if genie has wand
+     */
+	public void setWand(boolean Wand) {
+		this.Wand = Wand;
+	}
+	public boolean getWand() {
+		return this.Wand;
+	}
+	public void kill(MagicalCreature other) {
+		if(this == other) {
+			System.out.println("I cannot kill myself");
+		}else {
+			if (other.type.equals("Dragon")) {
+				System.out.println("Dragons cannot die!");
+			}
+			else {
+			if(this.Wand == true) {
+				//if the other creature is not a genie, it dies
+				other.die();
+				System.out.println(other.name + " has been killed by "+ this.name);
+				}
+			else {
+				System.out.println("I cannot kill without my wand!");
+				}
+			}
+			}
+	}
+}
