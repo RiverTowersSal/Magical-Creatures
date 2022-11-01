@@ -1,0 +1,29 @@
+/**
+ * 
+ * @author Salvador Del Rio Torres
+ *
+ */
+public class Goblin extends MagicalCreature{
+
+	public Goblin(String name, String type, String color , int age) {
+		super(name,type,color,age);
+	}
+	public Goblin() {
+		super("","","",0);
+	}
+	public String toString() {
+		return super.toString() + "I kill elves if they do not have shields";
+	}
+	/**
+     * @return if goblin could kill
+     */
+	public <T extends Elf> void kill(T other) {
+		boolean elim = (other.getShield()) ? false:true;
+		
+		if(elim) {
+			other.die();
+		}
+		else
+			System.out.println("Elf has a shield!, I cannot kill them!");
+	}
+}
