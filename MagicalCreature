@@ -1,0 +1,64 @@
+/**
+ * 
+ * @author Salvador Del Rio Torres
+ *
+ */
+public class MagicalCreature {
+public String name;
+public String type;
+public String color;
+public int age;
+public Boolean alive;
+
+	public MagicalCreature(String name, String type , String color, int age) {
+		this.name = name;
+		this.type = type;
+		this.color = color;
+		this.age = age;
+		this.alive = true;
+	}
+	/**
+     * @return attributes of magical creature
+     */
+	public String getName() {
+		return name;
+	}
+	public String getType() {
+		return type;
+	}
+	public String getColor() {
+		return color;
+	}
+	public int getAge() {
+		return age;
+	}
+
+	public boolean getAlive() {
+		return alive;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+//do not know
+	public void setAlive(boolean alive) {
+		this.alive = alive;
+	}
+	public void kill(MagicalCreature other) {
+		System.out.println(this.name +" does not have the license to kill");
+	}
+	public void die() {
+		this.alive = false;
+	}
+	public String toString() {
+		return "My name is" + this.name + "I am a"+ this.color+ " "+ this.type+" I am " + this.age +" years old ";
+	}
+}
