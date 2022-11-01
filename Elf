@@ -1,0 +1,33 @@
+**
+ * 
+ * @author Salvador Del Rio Torres
+ *
+ */
+public class Elf extends MagicalCreature{
+	private boolean shield;
+	
+	public Elf(String name, String type, String color, int age) {
+		super(name,type,color,age);
+		this.shield = false;
+	}
+	public Elf() {
+		super("","","",0);
+	}
+	public String toString() {
+		if(this.shield == true) {
+			return super.toString()+ "I have a shield";
+		}
+		else
+			return super.toString()+"I have no shield";
+	}
+	/**
+     * @return if elf has a shield
+     */
+	public void setShield(boolean shield) {
+		this.shield = shield;
+	}
+	public boolean getShield(){
+		return this.shield;
+	}
+
+}
